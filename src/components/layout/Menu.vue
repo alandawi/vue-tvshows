@@ -20,12 +20,12 @@
 		<div class="phone-viewport">
 		  <md-list>
 		    <md-list-item>
-		      <md-icon>home</md-icon>
+		      <md-icon>tv</md-icon>
 		      <span @click="openPage('')">Shows</span>
 		    </md-list-item>
 
 		    <md-list-item>
-		      <md-icon>home</md-icon>
+		      <md-icon>search</md-icon>
 		      <span @click="openPage('search')">Search</span>
 		    </md-list-item>
 		  </md-list>
