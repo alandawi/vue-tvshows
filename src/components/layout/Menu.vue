@@ -21,7 +21,7 @@
 		  <md-list>
 		    <md-list-item>
 		      <md-icon>home</md-icon>
-		      <span @click="openPage('')">Schedule</span>
+		      <span @click="openPage('')">Shows</span>
 		    </md-list-item>
 
 		    <md-list-item>

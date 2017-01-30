@@ -6,7 +6,8 @@ import App from './App'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 
-import Schedule from './components/schedule'
+import Shows from './components/Shows'
+import Show from './components/Show'
 
 Vue.use(VueAxios, axios)
 Vue.use(VueMaterial)
@@ -18,7 +19,8 @@ Vue.material.registerTheme('default', {
 })
 
 const routes = [
-	{path: '/', component: Schedule}
+	{path: '/', component: Shows},
+	{path: '/show/:id', component: Show}
 ]
 
 const router = new VueRouter({

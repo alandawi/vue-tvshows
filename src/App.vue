@@ -41,4 +41,7 @@ export default {
 .section-holidays button {
   padding-left: 0 !important;
 }
+.class-divider {
+  margin: 20px 0 !important;
+}
 </style>
