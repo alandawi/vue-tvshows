@@ -1,9 +1,8 @@
 <template>
   <div class="content section-shows">
-
     <div class="phone-viewport">
 	  <md-list class="md-double-line" v-if="shows">
-	  	<md-list-item v-for="show in shows">
+	  	<md-list-item v-for="show in shows" v-bind:href="'/show/' + show.id" >
   			<img v-bind:src="show.image.medium">
 			<div class="md-list-text-container">
 				<span>{{show.name}}</span>
@@ -13,7 +12,6 @@
 	    </md-list-item>
 	  </md-list>
 	</div>
-
   </div>
 </template>
 
@@ -34,6 +32,7 @@ export default {
 		fetchData: function () {
 			this.axios.get(API.shows).then((response) => {
 				this.shows = response.data;
+				console.log(this.shows);
 			});
 		}
 	}
