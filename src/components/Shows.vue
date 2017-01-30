@@ -12,27 +12,32 @@
 	    </md-list-item>
 	  </md-list>
 	</div>
+
+	<!-- <loader></loader> -->
   </div>
 </template>
 
 <script>
 import API from '../api/endpoints'
+import Loader from './layout/Loader'
 
 export default {
-  name: 'shows',
-  data () {
-    return {
-      shows: null
-    }
-  },
-  created: function () {
+	name: 'shows',
+	components: {
+		'loader': Loader
+	},
+	data () {
+		return {
+		  shows: null
+		}
+	},
+	created: function () {
 		this.fetchData()
 	},
 	methods: {
 		fetchData: function () {
 			this.axios.get(API.shows).then((response) => {
 				this.shows = response.data;
-				console.log(this.shows);
 			});
 		}
 	}
