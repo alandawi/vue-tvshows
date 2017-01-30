@@ -6,14 +6,19 @@ import App from './App'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 
-import Home from './components/Home'
+import Schedule from './components/schedule'
 
 Vue.use(VueAxios, axios)
 Vue.use(VueMaterial)
 Vue.use(VueRouter)
 
+Vue.material.registerTheme('default', {
+  primary: 'amber',
+  background: 'white'
+})
+
 const routes = [
-	{path: '/', component: Home}
+	{path: '/', component: Schedule}
 ]
 
 const router = new VueRouter({
