@@ -12,23 +12,21 @@
 	    </md-list-item>
 	  </md-list>
 	</div>
-
-	<!-- <loader></loader> -->
+	
+	<spinner v-show="loader"></spinner>
   </div>
 </template>
 
 <script>
 import API from '../api/endpoints'
-import Loader from './layout/Loader'
+import { eventBus } from '../main'
 
 export default {
 	name: 'shows',
-	components: {
-		'loader': Loader
-	},
 	data () {
 		return {
-		  shows: null
+		  shows: null,
+		  loader: true
 		}
 	},
 	created: function () {
@@ -38,6 +36,7 @@ export default {
 		fetchData: function () {
 			this.axios.get(API.shows).then((response) => {
 				this.shows = response.data;
+				this.loader = false;
 			});
 		}
 	}

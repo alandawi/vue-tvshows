@@ -8,6 +8,7 @@ import 'vue-material/dist/vue-material.css'
 
 import Shows from './components/Shows'
 import Show from './components/Show'
+import Loader from './components/layout/Loader'
 
 Vue.use(VueAxios, axios)
 Vue.use(VueMaterial)
@@ -18,6 +19,10 @@ Vue.material.registerTheme('default', {
   background: 'white'
 })
 
+// Components
+Vue.component('spinner', Loader);
+
+// Routes
 const routes = [
 	{path: '/', component: Shows},
 	{path: '/show/:id', component: Show}
@@ -28,6 +33,7 @@ const router = new VueRouter({
 	mode: 'history',
 });
 
+// Init
 new Vue({
 	el: '#app',
 	router,

@@ -9,6 +9,7 @@
 
 <script>
 import Menu from 'components/layout/Menu'
+import { eventBus } from './main'
 
 export default {
   components: {

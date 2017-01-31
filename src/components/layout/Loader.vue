@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper-loader" v-if="displaySpinner">
+  <div class="wrapper-loader">
 	<md-spinner :md-size="60" md-indeterminate class="md-warn loader"></md-spinner>
   </div>
 </template>
@@ -9,7 +9,6 @@ export default {
   name: 'loader',
   data () {
     return {
-    	displaySpinner: true
     }
   }
 }

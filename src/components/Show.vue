@@ -48,6 +48,8 @@
 			</md-table>
 		  </md-layout>
 		</md-layout>
+
+		<spinner v-show="loader"></spinner>
 	</div>
 </template>
 
@@ -60,7 +62,8 @@ export default {
 		return {
 			id: this.$route.params.id,
 			detail: null,
-			cast: null
+			cast: null,
+		  	loader: true
 		}
 	},
 	created: function () {
@@ -70,12 +73,11 @@ export default {
 		fetchData: function () {
 			this.axios.get(API.show + this.id).then((response) => {
 				this.detail = response.data;
-				console.log(this.detail);
 			});
 
 			this.axios.get(API.show + this.id + '/cast').then((response) => {
 				this.cast = response.data;
-				console.log(this.cast);
+				this.loader = false;
 			})
 		}
 	}
